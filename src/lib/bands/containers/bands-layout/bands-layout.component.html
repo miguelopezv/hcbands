@@ -1,1 +1,44 @@
-<h1>erwefwef</h1>
+<h1>Hardcore bands list</h1>
+<hr />
+
+<div class="row">
+  <div class="col text-right">
+    <button routerLink="/band/new" class="btn btn-primary">
+      <fa-icon icon="plus"></fa-icon> Add
+    </button>
+  </div>
+</div>
+
+<table class="table mt-3 animated fadeIn fast">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Country</th>
+      <th scope="col">Status</th>
+      <th scope="col">options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info text-center mt-3">
+  <h4 class="alert-heading">Loading</h4>
+  <p><fa-icon class="fa-3x" icon="spinner" [spin]="true"></fa-icon></p>
+  <p class="mb-0">Please wait...</p>
+</div>
+
+<div class="alert alert-warning text-center mt-3">
+  <h4 class="alert-heading">No data</h4>
+  <p><fa-icon class="fa-3x" icon="exclamation"></fa-icon></p>
+</div>

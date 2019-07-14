@@ -19,6 +19,10 @@ export class BandsService {
     return this.firestore.collection('bands').snapshotChanges();
   }
 
+  readBand(bandId: string) {
+    return this.firestore.doc(`bands/${bandId}`).snapshotChanges();
+  }
+
   updateBand(band: Band) {
     const bandTo = { ...band };
     delete bandTo.id;

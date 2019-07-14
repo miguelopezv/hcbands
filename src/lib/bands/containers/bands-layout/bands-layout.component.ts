@@ -33,8 +33,10 @@ export class BandsLayoutComponent implements OnInit {
       type: 'question',
       showConfirmButton: true,
       showCancelButton: true
-    }).then(response =>
-      response.value ? this.bandsService.deleteBand(band.id) : ''
-    );
+    }).then(response => {
+      if (response.value) {
+        this.bandsService.deleteBand(band.id);
+      }
+    });
   }
 }

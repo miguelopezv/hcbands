@@ -9,7 +9,10 @@
   </div>
 </div>
 
-<table class="table mt-3 animated fadeIn fast">
+<table
+  *ngIf="!loading && bands.length"
+  class="table mt-3 animated fadeIn faster"
+>
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -21,24 +24,42 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+    <tr *ngFor="let band of bands; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ band.name }}</td>
+      <td>{{ band.genre }}</td>
+      <td>{{ band.country }}</td>
+      <td>
+        <label
+          [class]="'badge badge-' + (band.status ? 'success' : 'danger')"
+          >{{ band.status ? 'Active' : 'Inactive' }}</label
+        >
+      </td>
+      <td>
+        <button class="btn btn-info mr-1">
+          <fa-icon [routerLink]="['/band', band.id]" icon="pen"></fa-icon>
+        </button>
+        <button (click)="deleteBand(band)" class="btn btn-danger">
+          <fa-icon icon="trash"></fa-icon>
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
 
-<div class="alert alert-info text-center mt-3">
+<div
+  *ngIf="loading"
+  class="alert alert-info text-center mt-3 animated fadeIn faster"
+>
   <h4 class="alert-heading">Loading</h4>
   <p><fa-icon class="fa-3x" icon="spinner" [spin]="true"></fa-icon></p>
   <p class="mb-0">Please wait...</p>
 </div>
 
-<div class="alert alert-warning text-center mt-3">
+<div
+  *ngIf="!loading && !bands.length"
+  class="alert alert-warning text-center mt-3 animated fadeIn faster"
+>
   <h4 class="alert-heading">No data</h4>
   <p><fa-icon class="fa-3x" icon="exclamation"></fa-icon></p>
 </div>

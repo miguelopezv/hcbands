@@ -22,10 +22,14 @@ export class BandLayoutComponent {
   }
   band: Band = { name: '', country: '', status: true };
 
-  save(form: NgForm) {
-    this.bandsService
-      .createBand(this.band)
-      .then((id: string) => (this.band.id = id));
+  save() {
+    if (this.band.id) {
+      this.bandsService.updateBand(this.band).then(data => console.log(data));
+    } else {
+      this.bandsService
+        .createBand(this.band)
+        .then((id: string) => (this.band.id = id));
+    }
   }
 
   setBandStatus() {

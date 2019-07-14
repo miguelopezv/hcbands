@@ -9,7 +9,9 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faPlus,
   faSpinner,
-  faExclamation
+  faExclamation,
+  faPen,
+  faTrash
 } from '@fortawesome/free-solid-svg-icons';
 
 const routes: Routes = [
@@ -22,6 +24,6 @@ const routes: Routes = [
 })
 export class BandsModule {
   constructor() {
-    library.add(faPlus, faSpinner, faExclamation);
+    library.add(faPlus, faSpinner, faExclamation, faPen, faTrash);
   }
 }

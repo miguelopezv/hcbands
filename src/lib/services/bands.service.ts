@@ -20,8 +20,10 @@ export class BandsService {
   }
 
   updateBand(band: Band) {
-    delete band.id;
-    return this.firestore.doc(`bands/${band.id}`).update(band);
+    const bandTo = { ...band };
+    delete bandTo.id;
+
+    return this.firestore.doc(`bands/${band.id}`).update(bandTo);
   }
 
   deleteBand(bandId: string) {

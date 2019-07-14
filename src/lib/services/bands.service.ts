@@ -8,8 +8,11 @@ import { Band } from '../models/band.model';
 export class BandsService {
   constructor(private firestore: AngularFirestore) {}
 
-  createBand(band: Band) {
-    return this.firestore.collection('bands').add(band);
+  createBand(band: Band): Promise<string> {
+    return this.firestore
+      .collection('bands')
+      .add(band)
+      .then(data => data.id);
   }
 
   readBands() {

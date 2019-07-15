@@ -1,5 +1,7 @@
 # HardcoreBandsApp
 
+[![CircleCI](https://circleci.com/gh/miguelopezv/hcbands/tree/master.svg?style=svg)](https://circleci.com/gh/miguelopezv/hcbands/tree/master)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
 
 ## Development server

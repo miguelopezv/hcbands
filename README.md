@@ -10,7 +10,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Production server
 
-You can find the project running on `https://hc-bands.herokuapp.com/`. Keep in mind this is a free Heroku instance so you should do one first request to awake the server [backend will work instantly 'cause is using firebase] and then you can browse the site.
+You can find the project running on [hc-bands.herokuapp.com](https://hc-bands.herokuapp.com/). Keep in mind this is a free Heroku instance so you should do one first request to awake the server [backend will work instantly 'cause is using firebase] and then you can browse the site.
 
 ## Code scaffolding
 
